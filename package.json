@@ -1,0 +1,21 @@
+{
+  "name": "jokesapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atikinsons/jokesAPI.git"
+  },
+  "keywords": [],
+  "author": "Atikisnons",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atikinsons/jokesAPI/issues"
+  },
+  "homepage": "https://github.com/Atikinsons/jokesAPI#readme"
+}
