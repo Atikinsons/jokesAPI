@@ -6,8 +6,9 @@ let dataPath = path.join(__dirname, "data")
 
 let server = http.createServer((req,res)=>{
     switch(req.url){
-        case "/":
-            getJokes(req,res)
+        case "/jokes":
+            if(req.method =='GET') getJokes(req,res)
+            if(req.method == "POST") addJoke(req,res)
             break
         default:
             notFound(req, res)
@@ -34,4 +35,21 @@ function getJokes(req, res){
     }
     res.writeHead(200,{"content-type": "application/json"})
     res.end(JSON.stringify(jokes))
+}
+
+function addJoke(req, res){
+    data = ""
+    req.on("data", chunk => data += chunk)
+    req.on("end", ()=>{
+        data = JSON.parse(data)
+        data.likes = 0
+        data.dislikes = 0
+        let dir = fs.readdirSync(dataPath)
+        let fileName = dir.length + ".json"
+        fs.writeFileSync(
+            path.join(dataPath, fileName),
+            JSON.stringify(data))
+        console.log(data)
+        res.end()
+    })
 }
