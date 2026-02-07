@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-100:#6A00FF;
+    --primary-200:#a64aff;
+    --primary-300:#ffb1ff;
+    --accent-100:#00E5FF;
+    --accent-200:#00829b;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --bg-100:#1A1A1A;
+    --bg-200:#292929;
+    --bg-300:#404040;
+      
+}
+
+body{
+    font-family: "Fira Sans", sans-serif;
+    background-color: var(--bg-100);
+    color: var(--text-100);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+header{
+    background-color: var(--primary-100);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .logo{
+    height: 4rem;
+}
+
+main {
+    background-color: var(--bg-200);
+    flex-grow: 1;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.jokes {
+    flex-grow: 1;
+    max-height: 63vh;
+    overflow-y:scroll ;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+form{
+    display: flex;
+    gap: 0.3rem;
+}
+
+form input{
+    flex-grow: 1;
+    border: none;
+    background-color: var(--bg-300);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+form button {
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.joke {
+    background-color: var(--primary-200);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.jokes .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: top 0.3rem; ;
+}
+
+.joke button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
