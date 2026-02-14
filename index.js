@@ -46,7 +46,7 @@ function getJokes(req, res){
         let binary = fs.readFileSync(pathToFile)
         let text =  Buffer.from(binary).toString()
         let obj = JSON.parse(text)
-        obj.id = 1
+        obj.id = i
         jokes.push(obj)
     }
     res.writeHead(200,{"content-type": "application/json"})
@@ -88,7 +88,7 @@ function dislike(id){
         let data = fs.readFileSync(p)
         let joke = Buffer.from(data).toString()
         let obj  = JSON.parse(joke)
-        obj.dislikes = obj.likes + 1
+        obj.dislikes = obj.dislikes + 1
         fs.writeFileSync(p, JSON.stringify(obj))
     }else{
         return null
